@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+import rospy
+from moveit_python import MoveGroupInterface, PlanningSceneInterface
+
+if __name__== '__main__':
+	rospy.init_node('test_movement')
+	move_group = MoveGroupInterface("arm_with_torso",'base_link')
+	joint_names = ["torso_lift_joint", "shoulder_pan_joint",
+                   "shoulder_lift_joint", "upperarm_roll_joint",
+                   "elbow_flex_joint", "forearm_roll_joint",
+                   "wrist_flex_joint", "wrist_roll_joint"]
+	poses = [0,0,0,0,0,0,0,0]
+	
